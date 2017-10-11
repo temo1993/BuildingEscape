@@ -75,7 +75,23 @@ Intermediate/*
 DerivedDataCache/*
 
 # Content Folder
-Content/*
+Content/Collecions
+Content/Developers
+Content/EditedSTContent
+Content/StarterContent
+Content/*.uasset
 
 # Plugins Folder
 Plugins/*
+
+# cmake-build-debug for clion
+cmake-build-debug
+
+# .idea Folder
+.idea/*
+
+# Clion generated
+*.workspace
+*.txt
+!.gitattributes.txt
+Config/DefaultEditorUserSettings.ini
