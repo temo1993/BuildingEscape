@@ -75,4 +75,7 @@ Intermediate/*
 DerivedDataCache/*
 
 # Content Folder
-Content/StarterContent/*
+Content/*
+
+# Plugins Folder
+Plugins/*
