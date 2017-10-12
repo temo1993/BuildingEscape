@@ -26,9 +26,9 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 private:
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere) // Macro To be visible(read-only) inside editor (Details Tab)
 	float OpenAngle = 90.0f;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere)  // Macro to be editable inside editor (Details Tab)
 	ATriggerVolume* PressurePlate;
 };
