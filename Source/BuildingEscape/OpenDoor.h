@@ -35,6 +35,6 @@ private:
     UPROPERTY(EditAnywhere)      // Macro to be editable inside editor (Details Tab)
     ATriggerVolume* PressurePlate;
 
-    UPROPERTY(EditAnywhere)      // Macro to be editable inside editor (Details Tab)
+    //UPROPERTY(EditAnywhere)      // Macro to be editable inside editor (Details Tab)
     AActor* ActorThatOpensDoor;  // Remember pawn(current ActorThatOpensDoor) inherits from Actor
 };
