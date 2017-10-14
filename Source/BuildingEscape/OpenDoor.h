@@ -23,18 +23,27 @@ protected:
 
 	void OpenDoor();
 
+	void CloseDoor();
+
 public:
     // Called every frame
     virtual void
     TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
 
 private:
-    UPROPERTY(VisibleAnywhere)    // Macro To be visible(read-only) inside editor (Details Tab)
+    UPROPERTY(EditAnywhere)    // Macro To be visible(read-only) inside editor (Details Tab)
     float OpenAngle = 90.0f;
 
     UPROPERTY(EditAnywhere)      // Macro to be editable inside editor (Details Tab)
     ATriggerVolume* PressurePlate;
 
-    //UPROPERTY(EditAnywhere)      // Macro to be editable inside editor (Details Tab)
     AActor* ActorThatOpensDoor;  // Remember pawn(current ActorThatOpensDoor) inherits from Actor
+	AActor* Owner;				 // The owning door
+
+	UPROPERTY(EditAnywhere)      // Macro to be editable inside editor (Details Tab)
+	float DoorCloseDelay = 1.0f;
+
+	float LastDoorOpenTime;
+
+	float InitialDoorRotationValueOnZAxis; // Stores value of initial rotation on Z AXIS.
 };
