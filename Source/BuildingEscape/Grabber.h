@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include "PhysicsEngine/PhysicsHandleComponent.h"
 #include "DrawDebugHelpers.h"
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
@@ -28,4 +29,5 @@ private:
 	// How far of head of the player can we reach in CM
 	float Reach = 100.f;
 	
+	UPhysicsHandleComponent* PhysicsHandle = nullptr;
 };
