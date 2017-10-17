@@ -43,7 +43,5 @@ private:
 	UPROPERTY(EditAnywhere)      // Macro to be editable inside editor (Details Tab)
 	float DoorCloseDelay = 1.0f;
 
-	float LastDoorOpenTime;
-
-	float InitialDoorRotationValueOnZAxis; // Stores value of initial rotation on Z AXIS.
+	float LastDoorOpenTime = 100.0f; // TODO Need some attention. Using random value !!!
 };

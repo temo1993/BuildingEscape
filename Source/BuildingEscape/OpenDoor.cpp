@@ -33,7 +33,7 @@ void UOpenDoor::OpenDoor()
 void UOpenDoor::CloseDoor()
 {
 	// Set the door rotation.
-	Owner->SetActorRotation(FRotator(0.0f, 0.0f, 0.0f));
+	Owner->SetActorRotation(FRotator(0.0f, -OpenAngle, 0.0f));
 }
 
 // Called every frame
