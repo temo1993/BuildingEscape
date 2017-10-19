@@ -1,5 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#include "Components/PrimitiveComponent.h"
 #include "Grabber.h"
 #include "GameFramework/Actor.h"
 #include "Engine/World.h"
@@ -75,7 +76,8 @@ void UGrabber::Grab()
 void UGrabber::Release()
 {
 	UE_LOG(LogTemp, Warning, TEXT("Grab released"));
-	// TODO release physics handle
+	/// release physics handle
+	PhysicsHandle->ReleaseComponent();
 }
 
 // Called every frame
