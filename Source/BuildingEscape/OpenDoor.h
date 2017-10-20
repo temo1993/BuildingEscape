@@ -7,19 +7,20 @@
 #include "Components/ActorComponent.h"
 #include "OpenDoor.generated.h"
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnOpenRequest);
 
 UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class BUILDINGESCAPE_API UOpenDoor : public UActorComponent
 {
-    GENERATED_BODY()
+	GENERATED_BODY()
 
 public:
-    // Sets default values for this component's properties
-    UOpenDoor();
+	// Sets default values for this component's properties
+	UOpenDoor();
 
 protected:
-    // Called when the game starts
-    virtual void BeginPlay() override;
+	// Called when the game starts
+	virtual void BeginPlay() override;
 
 	void OpenDoor();
 
@@ -29,21 +30,24 @@ protected:
 	float GetTotalMassOfActorsOnPlate();
 
 public:
-    // Called every frame
-    virtual void
-    TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
+	// Called every frame
+	virtual void
+		TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
+
+	UPROPERTY(BlueprintAssignable)
+		FOnOpenRequest OnOpenRequest;
 
 private:
-    UPROPERTY(EditAnywhere)    // Macro To be visible(read-only) inside editor (Details Tab)
-    float OpenAngle = 90.0f;
+	UPROPERTY(EditAnywhere)    // Macro To be visible(read-only) inside editor (Details Tab)
+		float OpenAngle = 90.0f;
 
-    UPROPERTY(EditAnywhere)      // Macro to be editable inside editor (Details Tab)
-    ATriggerVolume* PressurePlate = nullptr;
+	UPROPERTY(EditAnywhere)      // Macro to be editable inside editor (Details Tab)
+		ATriggerVolume* PressurePlate = nullptr;
 
 	AActor* Owner = nullptr;				 // The owning door
 
 	UPROPERTY(EditAnywhere)      // Macro to be editable inside editor (Details Tab)
-	float DoorCloseDelay = 1.0f;
+		float DoorCloseDelay = 1.0f;
 
 	float LastDoorOpenTime = 100.0f; // TODO Need some attention. Using random value !!!
 };
