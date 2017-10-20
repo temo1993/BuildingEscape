@@ -38,9 +38,9 @@ private:
     float OpenAngle = 90.0f;
 
     UPROPERTY(EditAnywhere)      // Macro to be editable inside editor (Details Tab)
-    ATriggerVolume* PressurePlate;
+    ATriggerVolume* PressurePlate = nullptr;
 
-	AActor* Owner;				 // The owning door
+	AActor* Owner = nullptr;				 // The owning door
 
 	UPROPERTY(EditAnywhere)      // Macro to be editable inside editor (Details Tab)
 	float DoorCloseDelay = 1.0f;
