@@ -25,6 +25,9 @@ protected:
 
 	void CloseDoor();
 
+	// Returns total mass in kg
+	float GetTotalMassOfActorsOnPlate();
+
 public:
     // Called every frame
     virtual void
@@ -37,7 +40,6 @@ private:
     UPROPERTY(EditAnywhere)      // Macro to be editable inside editor (Details Tab)
     ATriggerVolume* PressurePlate;
 
-    AActor* ActorThatOpensDoor;  // Remember pawn(current ActorThatOpensDoor) inherits from Actor
 	AActor* Owner;				 // The owning door
 
 	UPROPERTY(EditAnywhere)      // Macro to be editable inside editor (Details Tab)

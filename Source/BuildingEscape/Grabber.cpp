@@ -57,7 +57,7 @@ void UGrabber::Grab()
 	auto ActorHit = HitResult.GetActor();
 
 	/// If we hit something then attach a physics handle
-	if (ComponentToGrab)
+	if (ActorHit)
 	{
 		PhysicsHandle->GrabComponent(
 			ComponentToGrab,
