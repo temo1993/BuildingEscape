@@ -95,4 +95,6 @@ cmake-build-debug
 *.workspace
 *.txt
 !.gitattributes.txt
-Config/DefaultEditorUserSettings.ini
+
+#Audio Folder
+Content/Audio
